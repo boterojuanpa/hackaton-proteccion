@@ -1,0 +1,21 @@
+<h1>
+  Trámites
+</h1>
+<div class="row">
+  <div class="col-md-5 col-md-offset-4">
+    <div class="form-group">
+      <label for="selectTramite">Seleccione el tipo de tramite</label>
+
+      <select class="form-control" [(ngModel)]="tipoTramiteSelect" (ngModelChange)="seleccionarTipoTramite()">
+          <option *ngFor="let tipoTramite of tiposTramite" [ngValue]="tipoTramite.id"> {{tipoTramite.name}} </option>
+      </select>
+      <div *ngIf="tipoTramiteSelect == 1">
+        <label for="inputCelular">Por favor ingrese su celular (Opcional)</label>
+        <input type="number" [(ngModel)]="celular" id="inputCelular" class="form-control">
+      </div>      
+      <button class="btn-primary" *ngIf="tipoTramiteSelect == 1">Agendar</button>
+      <button class="btn-primary" *ngIf="tipoTramiteSelect == 2">Descargar online</button>
+
+    </div>
+  </div>
+</div>
