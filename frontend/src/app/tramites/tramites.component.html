@@ -4,30 +4,37 @@
 <div class="row">
   <div class="col-md-5 col-md-offset-4">
     <div class="form-group">
-      <label for="selectTramite">Seleccione el tipo de tramite</label>
-      <select class="form-control" [(ngModel)]="tramiteSeleccionado.tipoTramite" (ngModelChange)="seleccionarTipoTramite()" id="selectTramite">
+
+      <form #form="ngForm">
+        <label for="selectTramite">Seleccione el tipo de tramite</label>
+        <select class="form-control" [(ngModel)]="tramiteSeleccionado.tipoTramite" (ngModelChange)="seleccionarTipoTramite()" id="selectTramite" name="tipoTramite">
           <option *ngFor="let tipoTramite of tiposTramite" [ngValue]="tipoTramite"> {{tipoTramite.name}} </option>
-      </select>
-      <div *ngIf="tramiteSeleccionado.tipoTramite.id == 1">        
-
-        <label for="selectSede">Seleccione la sede en la cual desea retirar las cesantías</label>
-        <select class="form-control" [(ngModel)]="tramiteSeleccionado.sede" id="selectSede">
-          <option *ngFor="let sede of sedes" [ngValue]="sede"> {{sede.name}} </option>
         </select>
+        <div *ngIf="tramiteSeleccionado.tipoTramite.id == 1">
 
-        <label for="inputCelular">Por favor ingrese su celular (Opcional)</label>
-        <input type="number" [(ngModel)]="tramiteSeleccionado.celular" id="inputCelular" class="form-control">
+          <label for="selectSede">Seleccione la sede en la cual desea retirar las cesantías</label>
+          <select class="form-control" [(ngModel)]="tramiteSeleccionado.sede" id="selectSede" name="sede" required>
+            <option *ngFor="let sede of sedes" [ngValue]="sede"> {{sede.name}} </option>
+          </select>
 
-        <label for="inputCelular">Por favor ingrese la fecha</label> <br>
-        <p-calendar [(ngModel)]="tramiteSeleccionado.fecha" [showTime]="true"></p-calendar>
+          <label for="inputCelular">Por favor ingrese su celular (Opcional)</label>
+          <input type="number" [(ngModel)]="tramiteSeleccionado.celular" id="inputCelular" class="form-control" name="celular">
+
+          <label for="inputCelular">Por favor ingrese la fecha</label> <br>
+          <p-calendar [(ngModel)]="tramiteSeleccionado.fecha" [showTime]="true" name="fecha" required></p-calendar>
 
 
-      </div>      
-      <button class="btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click) = "agendar()">Agendar</button>
-      <button class="btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click) = "abrirModal()">Descargar online</button>
-      
-      
-      
+        </div>
+        <br>
+        <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click)="agendar()" [disabled]="!form.form.valid">Agendar</button>
+        <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModal()">Descargar online</button>
+
+
+      </form>
+
+
+
+
 
     </div>
   </div>

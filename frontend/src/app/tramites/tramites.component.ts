@@ -31,7 +31,7 @@ export class TramitesComponent implements OnInit {
   constructor(vcRef: ViewContainerRef, public modal: Modal, public usuariosService : UsuariosService) {
     this.tramiteSeleccionado = new Tramite();
     this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
-    this.tramiteSeleccionado.nombreUsuario = usuariosService.usuarioSession.nombre;
+    this.tramiteSeleccionado.usuario = usuariosService.usuarioSession;
     this.seleccionarTipoTramite();
    
   }
