@@ -26,14 +26,15 @@ export class TramitesComponent implements OnInit {
 
   public tramiteSeleccionado: Tramite;
 
-  events: any[];
+  public minDate : Date;
 
-
+  
   constructor(vcRef: ViewContainerRef,
       public modal: Modal,
       public usuariosService: UsuariosService, 
       public turnoService: TurnoService) {
         this.iniciarDatos();
+      this.minDate = new Date();
 
   }
 
