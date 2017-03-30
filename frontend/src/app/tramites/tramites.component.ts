@@ -29,12 +29,12 @@ export class TramitesComponent implements OnInit {
   events: any[];
 
 
-  constructor(vcRef: ViewContainerRef, public modal: Modal, public usuariosService : UsuariosService, public turnoService: TurnoService) {
-    this.tramiteSeleccionado = new Tramite();
-    this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
-    this.tramiteSeleccionado.usuario = usuariosService.usuarioSession;
-    this.seleccionarTipoTramite();
-   
+  constructor(vcRef: ViewContainerRef,
+      public modal: Modal,
+      public usuariosService: UsuariosService, 
+      public turnoService: TurnoService) {
+        this.iniciarDatos();
+
   }
 
   ngOnInit() {
@@ -43,12 +43,12 @@ export class TramitesComponent implements OnInit {
   public seleccionarTipoTramite(): void {
     console.log(this.tramiteSeleccionado);
     if (this.tramiteSeleccionado.tipoTramite.id == 2) {
-      this.abrirModal();
+      this.abrirModalTramiteOnline();
     }
 
   }
 
-  public abrirModal(): void {
+  public abrirModalTramiteOnline(): void {
     this.modal.alert()
       .size('lg')
       .showClose(true)
@@ -58,10 +58,30 @@ export class TramitesComponent implements OnInit {
       .open();
   }
 
+   public abrirModalResultadoExitoso(): void {
+    this.modal.alert()
+      .size('lg')
+      .showClose(true)
+      .title('Éxito')
+      .body(`
+            La solicitud ha sido agendada`)
+      .open();
+  }
+
 
   public agendar(): void {
-    console.log(this.tramiteSeleccionado)
     this.turnoService.insert(this.tramiteSeleccionado);
-   }
+    this.abrirModalResultadoExitoso();
+    this.iniciarDatos();
+  }
+
+  private iniciarDatos(): void {
+    this.tramiteSeleccionado = new Tramite();
+    this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
+    this.tramiteSeleccionado.usuario = this.usuariosService.usuarioSession;
+    this.seleccionarTipoTramite();
+  }
+
+
 
 }
