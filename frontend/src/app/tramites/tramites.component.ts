@@ -1,5 +1,6 @@
-import { UsuariosService } from './../share/usuarios.service';
-import { Tramite } from './../share/tramite.model';
+import { Tramite } from './../shared/model/tramite.model';
+import { UsuariosService } from './../shared/service/usuarios.service';
+import { TurnoService } from './../shared/service/turno.service';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
@@ -28,7 +29,7 @@ export class TramitesComponent implements OnInit {
   events: any[];
 
 
-  constructor(vcRef: ViewContainerRef, public modal: Modal, public usuariosService : UsuariosService) {
+  constructor(vcRef: ViewContainerRef, public modal: Modal, public usuariosService : UsuariosService, public turnoService: TurnoService) {
     this.tramiteSeleccionado = new Tramite();
     this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
     this.tramiteSeleccionado.usuario = usuariosService.usuarioSession;
@@ -60,6 +61,7 @@ export class TramitesComponent implements OnInit {
 
   public agendar(): void {
     console.log(this.tramiteSeleccionado)
+    this.turnoService.insert(this.tramiteSeleccionado);
    }
 
 }

@@ -1,4 +1,5 @@
-import { UsuariosService } from './share/usuarios.service';
+import { TurnoService } from 'app/shared/service/turno.service';
+import { UsuariosService } from './shared/service/usuarios.service';
 import { ScheduleModule, CalendarModule } from 'primeng/primeng';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -32,7 +33,7 @@ import { FirebaseConfig } from "firebaseconfig";
 	AngularFireModule.initializeApp(FirebaseConfig)
     
   ],
-  providers: [UsuariosService],
+  providers: [UsuariosService, TurnoService],
   bootstrap: [AppComponent ]
 })
 export class AppModule { }
