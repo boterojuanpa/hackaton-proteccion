@@ -1,4 +1,4 @@
-import { UsuariosService } from './share/usuarios.service';
+import { UsuariosService } from './shared/service/usuarios.service';
 import { Component } from '@angular/core';
 
 @Component({

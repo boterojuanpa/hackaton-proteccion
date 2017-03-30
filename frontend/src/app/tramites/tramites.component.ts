@@ -1,5 +1,6 @@
-import { UsuariosService } from './../share/usuarios.service';
-import { Tramite } from './../share/tramite.model';
+import { Tramite } from './../shared/model/tramite.model';
+import { UsuariosService } from './../shared/service/usuarios.service';
+import { TurnoService } from './../shared/service/turno.service';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
@@ -25,15 +26,16 @@ export class TramitesComponent implements OnInit {
 
   public tramiteSeleccionado: Tramite;
 
-  events: any[];
+  public minDate : Date;
 
+  
+  constructor(vcRef: ViewContainerRef,
+      public modal: Modal,
+      public usuariosService: UsuariosService, 
+      public turnoService: TurnoService) {
+        this.iniciarDatos();
+      this.minDate = new Date();
 
-  constructor(vcRef: ViewContainerRef, public modal: Modal, public usuariosService : UsuariosService) {
-    this.tramiteSeleccionado = new Tramite();
-    this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
-    this.tramiteSeleccionado.usuario = usuariosService.usuarioSession;
-    this.seleccionarTipoTramite();
-   
   }
 
   ngOnInit() {
@@ -42,12 +44,12 @@ export class TramitesComponent implements OnInit {
   public seleccionarTipoTramite(): void {
     console.log(this.tramiteSeleccionado);
     if (this.tramiteSeleccionado.tipoTramite.id == 2) {
-      this.abrirModal();
+      this.abrirModalTramiteOnline();
     }
 
   }
 
-  public abrirModal(): void {
+  public abrirModalTramiteOnline(): void {
     this.modal.alert()
       .size('lg')
       .showClose(true)
@@ -57,9 +59,30 @@ export class TramitesComponent implements OnInit {
       .open();
   }
 
+   public abrirModalResultadoExitoso(): void {
+    this.modal.alert()
+      .size('lg')
+      .showClose(true)
+      .title('Éxito')
+      .body(`
+            La solicitud ha sido agendada`)
+      .open();
+  }
+
 
   public agendar(): void {
-    console.log(this.tramiteSeleccionado)
-   }
+    this.turnoService.insert(this.tramiteSeleccionado);
+    this.abrirModalResultadoExitoso();
+    this.iniciarDatos();
+  }
+
+  private iniciarDatos(): void {
+    this.tramiteSeleccionado = new Tramite();
+    this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
+    this.tramiteSeleccionado.usuario = this.usuariosService.usuarioSession;
+    this.seleccionarTipoTramite();
+  }
+
+
 
 }
