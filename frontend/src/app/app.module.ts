@@ -1,3 +1,5 @@
+import { UsuariosService } from './share/usuarios.service';
+import { ScheduleModule, CalendarModule } from 'primeng/primeng';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -25,9 +27,12 @@ import { FirebaseConfig } from "firebaseconfig";
     AppRoutingModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
-    AngularFireModule.initializeApp(FirebaseConfig)
+    ScheduleModule,
+    CalendarModule,
+	AngularFireModule.initializeApp(FirebaseConfig)
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UsuariosService],
+  bootstrap: [AppComponent ]
 })
 export class AppModule { }
