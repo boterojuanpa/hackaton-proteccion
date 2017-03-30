@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <td>Nombre</td>
+        <td>Turno</td>
+        <td>Tiempo</td>
+    </tr>
+    <tr *ngFor="let turno of items | async">
+        <td>{{turno.nombre}}</td>
+        <td>{{turno.turno}}</td>
+        <td>{{turno.hora}}</td>
+    </tr>
+</table>

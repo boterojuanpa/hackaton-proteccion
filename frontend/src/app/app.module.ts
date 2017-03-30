@@ -5,15 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
-
+import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { TramitesComponent } from './tramites/tramites.component';
+import { TurnosComponent } from './turnos/turnos.component';
+import { FirebaseConfig } from "firebaseconfig";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TramitesComponent
+    TramitesComponent,
+    TurnosComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { TramitesComponent } from './tramites/tramites.component';
     HttpModule,
     AppRoutingModule,
     ModalModule.forRoot(),
-    BootstrapModalModule
+    BootstrapModalModule,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

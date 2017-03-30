@@ -1,4 +1,5 @@
 import { TramitesComponent } from './tramites/tramites.component';
+import { TurnosComponent } from './turnos/turnos.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,7 +12,10 @@ const routes: Routes = [
   {
     path: 'tramites', 
     component: TramitesComponent
-  },
+  },{
+    path: 'turnos', 
+    component: TurnosComponent
+  }
 
 ]
 
