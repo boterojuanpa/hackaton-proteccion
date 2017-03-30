@@ -1,3 +1,5 @@
+import { UsuariosService } from './../share/usuarios.service';
+import { Tramite } from './../share/tramite.model';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
@@ -15,44 +17,49 @@ export class TramitesComponent implements OnInit {
     { id: 2, name: "Certificado de difusión" }
   ];
 
-  public tipoTramiteSelect: Number;
+  public sedes = [
+    { id: 1, name: "Bello" },
+    { id: 2, name: "Itaguí" }
+  ];
 
-  public celular: Number;
 
-  constructor(vcRef: ViewContainerRef, public modal: Modal) {
+  public tramiteSeleccionado: Tramite;
+
+  events: any[];
+
+
+  constructor(vcRef: ViewContainerRef, public modal: Modal, public usuariosService : UsuariosService) {
+    this.tramiteSeleccionado = new Tramite();
+    this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
+    this.tramiteSeleccionado.nombreUsuario = usuariosService.usuarioSession.nombre;
     this.seleccionarTipoTramite();
-    // modal.overlay.defaultViewContainer = vcRef;
+   
   }
 
   ngOnInit() {
   }
 
   public seleccionarTipoTramite(): void {
-    if(this.tipoTramiteSelect == 2){
+    console.log(this.tramiteSeleccionado);
+    if (this.tramiteSeleccionado.tipoTramite.id == 2) {
       this.abrirModal();
     }
-    
+
   }
 
   public abrirModal(): void {
     this.modal.alert()
       .size('lg')
       .showClose(true)
-      .title('A simple Alert style modal window')
+      .title('Descargar certificado en línea')
       .body(`
-            <span defaultOverlayTarget></span>
-            <h4>Alert is a classic (title/body/footer) 1 button modal window that 
-            does not block.</h4>
-            <b>Configuration:</b>
-            <ul>
-                <li>Non blocking (click anywhere outside to dismiss)</li>
-                <li>Size large</li>
-                <li>Dismissed with default keyboard key (ESC)</li>
-                <li>Close wth button click</li>
-                <li>HTML content</li>
-            </ul>`)
+            Para descargar el certificado dar clic `)
       .open();
   }
 
+
+  public agendar(): void {
+    console.log(this.tramiteSeleccionado)
+   }
 
 }
