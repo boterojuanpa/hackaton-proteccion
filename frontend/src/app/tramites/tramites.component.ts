@@ -1,3 +1,4 @@
+import { ModalTramiteLinea } from './modal-tramite-linea';
 import { CustomModal } from './modal-conformacion';
 import { Tramite } from './../shared/model/tramite.model';
 import { UsuariosService } from './../shared/service/usuarios.service';
@@ -49,15 +50,7 @@ export class TramitesComponent implements OnInit {
   }
 
   public abrirModalTramiteOnline(): void {
-    this.modal.alert()
-      .size('lg')
-      .showClose(true)
-      .title('Certificado en línea')
-      .body(`
-            <span class="class1" >Ya no necesitas esperar por tu certificado, puedes obtenerlo en linea</span>
-            <span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias? </span>
-            `)
-      .open();
+    this.modal.open(ModalTramiteLinea,  overlayConfigFactory({ "turno": "turno" }, BSModalContext));
   }
 
    public abrirModalResultadoExitoso(turno : string): void {
