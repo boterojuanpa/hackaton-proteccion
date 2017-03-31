@@ -15,12 +15,11 @@ export class TramitesComponent implements OnInit {
 
   public tiposTramite = [
     { id: 1, name: "Retiro de cesantias" },
-    { id: 2, name: "Certificado de difusión" }
+    { id: 2, name: "Consulta de afiliación obligatorias" }
   ];
 
   public sedes = [
-    { id: 1, name: "Bello" },
-    { id: 2, name: "Itaguí" }
+    { id: 1, name: "Suramericana" }
   ];
 
 

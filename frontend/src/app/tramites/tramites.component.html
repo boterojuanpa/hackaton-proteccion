@@ -27,7 +27,7 @@
         </div>
         <br>
         <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click)="agendar()" [disabled]="!form.form.valid">Agendar</button>
-        <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModal()">Descargar online</button>
+        <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModalTramiteOnline()">Descargar online</button>
 
 
       </form>
