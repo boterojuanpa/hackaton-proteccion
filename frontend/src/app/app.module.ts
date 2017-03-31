@@ -14,12 +14,16 @@ import { AppComponent } from './app.component';
 import { TramitesComponent } from './tramites/tramites.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { FirebaseConfig } from "firebaseconfig";
+import { ConsultaQComponent } from './consulta-q/consulta-q.component';
+import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TramitesComponent,
-    TurnosComponent
+    TurnosComponent,
+    ConsultaQComponent,
+    ConsultaQrComponent
   ],
   imports: [
     BrowserModule,
