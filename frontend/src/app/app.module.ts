@@ -1,4 +1,3 @@
-import { OrderPipe } from './shared/pipe/order.pipe';
 import { TurnoService } from 'app/shared/service/turno.service';
 import { UsuariosService } from './shared/service/usuarios.service';
 import { ScheduleModule, CalendarModule } from 'primeng/primeng';

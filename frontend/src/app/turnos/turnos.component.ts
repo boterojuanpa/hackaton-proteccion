@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { TurnoService } from "app/shared/service/turno.service";
-import { OrderPipe } from "app/shared/pipe/order.pipe";
 
 
 @Component({
   selector: 'app-turnos',
   templateUrl: './turnos.component.html',
-  providers: [TurnoService, OrderPipe],
+  providers: [TurnoService],
   styleUrls: ['./turnos.component.css']
 })
 export class TurnosComponent implements OnInit {
