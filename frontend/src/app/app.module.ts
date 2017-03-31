@@ -1,3 +1,4 @@
+import { CustomModal } from './tramites/modal-conformacion';
 import { OrderPipe } from './shared/pipe/order.pipe';
 import { TurnoService } from 'app/shared/service/turno.service';
 import { UsuariosService } from './shared/service/usuarios.service';
@@ -24,7 +25,7 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     TramitesComponent,
     TurnosComponent,
     ConsultaQrComponent,
-    ConsultaQrComponent
+    CustomModal
   ],
   imports: [
     BrowserModule,
@@ -39,6 +40,7 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
 
   ],
   providers: [UsuariosService, TurnoService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ CustomModal ]
 })
 export class AppModule { }
