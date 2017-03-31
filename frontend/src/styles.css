@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-weight: lighter;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+/*HEADER*/
+.header-standard {
+    background: #e3d829;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.margenes-usuario{
+    margin-top: 10px;
+    }
 
 .bienvenida{
     font-size: 16px;
@@ -77,9 +90,6 @@ select.form-control, input.form-control {
 }
 .input-standard:disabled, .select-standard:disabled{
     color: #e1e1df; 
-.nombre-usuario{
-    text-align: center;
-    font-size: 40px;
 }
 
 
@@ -124,9 +134,6 @@ select.form-control, input.form-control {
     background-color: #e3d829;
     border: solid 1px #e3d829;
     color: #0039a6;
-.numero-turno{
-    text-align: center;
-    font-size: 30px;
 }
 
 /*MEDIA*/
@@ -134,4 +141,16 @@ select.form-control, input.form-control {
 .margenes-usuario{
     margin-top: 0px;
 }
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+.nombre-usuario{
+    text-align: center;
+    font-size: 40px;
+}
+
+.numero-turno{
+    text-align: center;
+    font-size: 30px;
 }

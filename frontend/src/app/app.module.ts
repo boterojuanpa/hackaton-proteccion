@@ -1,3 +1,4 @@
+import { OrderPipe } from './shared/pipe/order.pipe';
 import { TurnoService } from 'app/shared/service/turno.service';
 import { UsuariosService } from './shared/service/usuarios.service';
 import { ScheduleModule, CalendarModule } from 'primeng/primeng';
@@ -14,9 +15,7 @@ import { AppComponent } from './app.component';
 import { TramitesComponent } from './tramites/tramites.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { FirebaseConfig } from "firebaseconfig";
-import { OrderPipe } from "app/shared/pipe/order.pipe";
 
-import { ConsultaQComponent } from './consulta-q/consulta-q.component';
 import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
 
 @NgModule({
@@ -24,9 +23,8 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     AppComponent,
     TramitesComponent,
     TurnosComponent,
-    ConsultaQComponent,
+    ConsultaQrComponent,
     ConsultaQrComponent
-    OrderPipe
   ],
   imports: [
     BrowserModule,
