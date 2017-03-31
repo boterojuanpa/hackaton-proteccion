@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { TurnoService } from "app/shared/service/turno.service";
+import { OrderPipe } from "app/shared/pipe/order.pipe";
 
 
 @Component({
   selector: 'app-turnos',
   templateUrl: './turnos.component.html',
-  providers: [TurnoService],
+  providers: [TurnoService, OrderPipe],
   styleUrls: ['./turnos.component.css']
 })
 export class TurnosComponent implements OnInit {
 
   items: FirebaseListObservable<any[]>;
-  turno = {
-    nombre: "Carlos",
-    turno: "1B",
-    hora: "30"
-  };
+
   turnoService: TurnoService;
 
   constructor(turnoService: TurnoService) {
@@ -25,7 +22,6 @@ export class TurnosComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.turnoService.findAll();
-    //this.turnoService.insert(this.turno);
   }
 
 }

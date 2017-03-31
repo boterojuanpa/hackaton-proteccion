@@ -8,6 +8,8 @@ export class Tramite {
     public celular: number;
     public fecha: Date;
     public usuario: Usuario;
+    public fechaTurno : number;
+    public numeroTurno : string;
 
     constructor() {
         

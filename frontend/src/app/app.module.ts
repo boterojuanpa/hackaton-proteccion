@@ -14,12 +14,15 @@ import { AppComponent } from './app.component';
 import { TramitesComponent } from './tramites/tramites.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { FirebaseConfig } from "firebaseconfig";
+import { OrderPipe } from "app/shared/pipe/order.pipe";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TramitesComponent,
-    TurnosComponent
+    TurnosComponent,
+    OrderPipe
   ],
   imports: [
     BrowserModule,
@@ -30,10 +33,10 @@ import { FirebaseConfig } from "firebaseconfig";
     BootstrapModalModule,
     ScheduleModule,
     CalendarModule,
-	AngularFireModule.initializeApp(FirebaseConfig)
-    
+    AngularFireModule.initializeApp(FirebaseConfig)
+
   ],
   providers: [UsuariosService, TurnoService],
-  bootstrap: [AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
