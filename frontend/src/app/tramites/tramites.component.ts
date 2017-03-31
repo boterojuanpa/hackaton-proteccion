@@ -53,8 +53,8 @@ export class TramitesComponent implements OnInit {
       .showClose(true)
       .title('Certificado en línea')
       .body(`
-            <span class="class1" >Ya no necesitas esperar por tu certificado, puedes obtenerlo en linea</span>
-            <span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias? </span>`)
+            <span class="class1">¡Ya no necesitas esperar por tu certificado, puedes obtenerlo en linea!</span>
+            <br><span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias? </span>`)
       .open();
   }
 

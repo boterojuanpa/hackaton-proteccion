@@ -39,7 +39,7 @@ body {
 }
 /*TURNO WEB*/
 .contextual-msn-container{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background: #0036aa;
     color: #fff;
     padding: 10px;
@@ -200,4 +200,13 @@ text-align: center;
 .numero-cubiculo{
     font-size: 50px;
     color: #e3d829;
+}
+.class1{
+    color: #008AD1;
+    font-size: 18px;
+    font-weight: bold;
+}
+.class2{
+    font-size: 20px;
+    color: #737373;
 }
