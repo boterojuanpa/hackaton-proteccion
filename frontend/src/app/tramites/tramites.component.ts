@@ -70,7 +70,13 @@ export class TramitesComponent implements OnInit {
 
 
   public agendar(): void {
+    console.log(this.tramiteSeleccionado);
+    
+    this.tramiteSeleccionado.fechaTurno = this.tramiteSeleccionado.fecha.getTime();
+    this.tramiteSeleccionado.numeroTurno = this.turnoService.getTurno();
+    
     this.turnoService.insert(this.tramiteSeleccionado);
+
     this.abrirModalResultadoExitoso();
     this.iniciarDatos();
   }
