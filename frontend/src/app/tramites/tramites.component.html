@@ -1,71 +1,82 @@
 <!--Contextual msn -->
-  <div class="contextual-msn-container">
+<div class="contextual-msn-container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="media">
-          <div class="media-left media-middle">
-            <img src="../assets/images/ico-alert-contextual.png" class="media-object">
-          </div>
-          <div class="media-body contextual-msn-text">
-           ¡Aparta tu turno desde cualquier lugar, facil y rapido!
-          </div>
+        <div class="col-md-12">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img src="../assets/images/ico-alert-contextual.png" class="media-object">
+                </div>
+                <div class="media-body contextual-msn-text">
+                    ¡Aparta tu turno desde cualquier lugar, facil y rapido!
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 <!--TITULO FORMULARIO-->
 <div class="titulo-formulario">
-  Agendar turno
+    Agendar turno
 </div>
 
-            <div class="container-form-group">
-                <form #form="ngForm">
-                    <div class="row">
-                        <div class="col-md-6 col-xs-12">
-                            <div class="form-group form-group-customized">
-                                <label for="selectTramite" class="label-standard">Servicio que desea tramitar</label>
-                                <select class="form-control select-standard" [(ngModel)]="tramiteSeleccionado.tipoTramite" (ngModelChange)="seleccionarTipoTramite()" id="selectTramite" name="tipoTramite">
+<div class="container-form-group">
+    <form #form="ngForm">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group form-group-customized">
+                    <label for="selectTramite" class="label-standard">Servicio que desea tramitar</label>
+                    <select class="form-control select-standard" [(ngModel)]="tramiteSeleccionado.tipoTramite" (ngModelChange)="seleccionarTipoTramite()"
+                        id="selectTramite" name="tipoTramite">
                                     <option *ngFor="let tipoTramite of tiposTramite" [ngValue]="tipoTramite"> {{tipoTramite.name}} </option>
                                 </select>
-                            </div> 
-                        </div>
-                        <div *ngIf="tramiteSeleccionado.tipoTramite.id == 1"> 
+                </div>
+            </div>
+            <div *ngIf="tramiteSeleccionado.tipoTramite.id == 1">
 
-                        <div class="col-md-6 col-xs-12">
-                            <div class="form-group form-group-customized">
-                                <label for="selectSede" class="label-standard">Sede donde realizara el tramite
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group form-group-customized">
+                        <label for="selectSede" class="label-standard">Sede donde realizara el tramite
                                     <span class="span-required-standard">*</span>
-                                </label>         
-                                <select class="form-control select-standard" [(ngModel)]="tramiteSeleccionado.sede" id="selectSede" name="sede" required>
+                                </label>
+                        <select class="form-control select-standard" [(ngModel)]="tramiteSeleccionado.sede" id="selectSede" name="sede" required>
                                   <option *ngFor="let sede of sedes" [ngValue]="sede"> {{sede.name}} </option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12">
-                            <div class="form-group form-group-customized">
-                                <label for="inputCelular" class="label-standard">Si desea recibir notificaciones, ingrese su número de celular
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group form-group-customized">
+                        <label for="inputCelular" class="label-standard">Si desea recibir notificaciones, ingrese su número de celular
                                 </label>
-                                <input type="number" [(ngModel)]="tramiteSeleccionado.celular" id="inputCelular" class="form-control input-standard" name="celular">         
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12">
-                            <div class="form-group form-group-customized">
-                                <label for="inputCelular" class="label-standard">Por favor ingrese la fecha</label>
-                                <span class="span-required-standard">*</span> <br>
-                                <p-calendar [(ngModel)]="tramiteSeleccionado.fecha" [showTime]="true" [minDate]="minDate" [readonlyInput]="true" name="fecha" required [showIcon]="true"></p-calendar>
-                                </div>
-                        </div>
-                        </div>
+                        <input type="number" [(ngModel)]="tramiteSeleccionado.celular" id="inputCelular" class="form-control input-standard" name="celular">
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12">
-                            <div class="buttons-container buttons-nr-position">
-                                <button name="cancelar" type="button" class="btn-call-action" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click)="agendar()" [disabled]="!form.form.valid">Agendar</button>
-                                <button name="continuar" type="button" class="btn-call-action" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModal()">Descargar certificado</button>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group form-group-customized">
+                        <label for="inputCelular" class="label-standard">Por favor ingrese la fecha</label>
+                        <span class="span-required-standard">*</span> <br>
+                        <p-calendar [(ngModel)]="tramiteSeleccionado.fecha" [showTime]="true" [minDate]="minDate" [readonlyInput]="true" name="fecha"
+                            required [showIcon]="true"></p-calendar>
                     </div>
-                </form>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="form-group form-group-customized">
+                        <label for="inputEmail" class="label-standard">Email
+                                </label>
+                        <input type="email" [(ngModel)]="tramiteSeleccionado.email" id="inputEmail" class="form-control input-standard" name="email">
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="buttons-container buttons-nr-position">
+                    <button name="cancelar" type="button" class="btn-call-action" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click)="agendar()"
+                        [disabled]="!form.form.valid">Agendar</button>
+                    <button name="continuar" type="button" class="btn-call-action" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModalTramiteOnline()">Descargar certificado</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
 <!---->
+

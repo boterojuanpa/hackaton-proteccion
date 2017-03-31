@@ -22,6 +22,7 @@ export class TurnoService {
     return this.af.database.list('/turnos', {
       query: {
         orderByChild: 'fechaTurno',
+        startAt: { value: new Date().getTime() , key: 'fechaTurno'  }
       }
     });
   }

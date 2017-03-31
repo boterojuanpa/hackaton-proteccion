@@ -1,7 +1,7 @@
 import { Tramite } from './../shared/model/tramite.model';
 import { UsuariosService } from './../shared/service/usuarios.service';
 import { TurnoService } from './../shared/service/turno.service';
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild, TemplateRef } from '@angular/core';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
 
@@ -15,7 +15,7 @@ export class TramitesComponent implements OnInit {
 
   public tiposTramite = [
     { id: 1, name: "Retiro de cesantias" },
-    { id: 2, name: "Consulta de afiliación obligatorias" }
+    { id: 2, name: "Constancia de afiliación obligatorias" }
   ];
 
   public sedes = [
@@ -26,7 +26,6 @@ export class TramitesComponent implements OnInit {
   public tramiteSeleccionado: Tramite;
 
   public minDate : Date;
-
   
   constructor(vcRef: ViewContainerRef,
       public modal: Modal,
@@ -52,9 +51,10 @@ export class TramitesComponent implements OnInit {
     this.modal.alert()
       .size('lg')
       .showClose(true)
-      .title('Descargar certificado en línea')
+      .title('Certificado en línea')
       .body(`
-            Para descargar el certificado dar clic `)
+            <span class="class1" >Ya no necesitas esperar por tu certificado, puedes obtenerlo en linea</span>
+            <span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias? </span>`)
       .open();
   }
 
