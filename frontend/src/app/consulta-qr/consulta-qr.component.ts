@@ -23,4 +23,12 @@ export class ConsultaQrComponent implements OnInit {
   ngOnInit() {
   }
 
+  calculateDate(date: number): number {
+    var currentTime = new Date().getTime();
+    console.log(currentTime);
+    //console.log(date - currentTime);
+    var h = (date - currentTime)/1000;
+    return parseInt((h/60).toString());
+  }
+
 }
