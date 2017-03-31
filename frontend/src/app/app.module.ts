@@ -17,6 +17,8 @@ import { TramitesComponent } from './tramites/tramites.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { FirebaseConfig } from "firebaseconfig";
 
+import { QRCodeModule } from 'angular2-qrcode';
+
 import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
 
 @NgModule({
@@ -25,7 +27,7 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     TramitesComponent,
     TurnosComponent,
     ConsultaQrComponent,
-    CustomModal
+    CustomModal, 
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,9 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     BootstrapModalModule,
     ScheduleModule,
     CalendarModule,
-    AngularFireModule.initializeApp(FirebaseConfig)
+    AngularFireModule.initializeApp(FirebaseConfig),
+    QRCodeModule
+    
 
   ],
   providers: [UsuariosService, TurnoService],
