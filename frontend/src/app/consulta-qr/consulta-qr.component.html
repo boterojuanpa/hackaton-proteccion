@@ -3,17 +3,20 @@
     <div class="nombre-usuario">{{turno.usuario.nombre}}</div>
   </div>
 
-  <div class="row clearfix">
+  <div class="row">
+  <div class="col-md-6 col-xs-6">
+    <div class="container-turnos">
     <div class="col-md-6 numero-turno">
-      <span>
-        Turno: {{turno.numeroTurno}}
-      </span>
-      
+      <div>Turno</div>
+      <div class="clearfix"></div>
+      <div>{{turno.numeroTurno}}</div>      
     </div>
-    <div class="col-md-6 numero-turno" >
-      <span>
-        Tiempo espera: {{turno.tiempoEspera}}
-      </span>      
+    <div class="col-md-6 numero-turno">
+      <div>Tiempo espera</div>
+      <div class="clearfix"></div>
+      <div>{{turno.tiempoEspera}}</div>     
+    </div>
+    </div>
     </div>
   </div>
 
