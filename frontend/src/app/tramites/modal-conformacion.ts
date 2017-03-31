@@ -40,7 +40,7 @@ export class CustomModalContext extends BSModalContext {
       <div class="modal-body modal-body-customized">
         <div class="modal-general-text">¡Haz separado tu turno!<br><span class="modal-general-text2">scanea el QR, que tambien llegara a tu correo y enterate en tiempo real del estado de tu turno</span></div>
         <span class="clearfix"></span>
-        <br>
+        <br> 
         <qr-code [value]="'http://192.168.164.62:4200/#/turnos/' + context.turno" [size]="150"></qr-code>
       </div>
       <div class="modal-footer modal-footer-customized">
