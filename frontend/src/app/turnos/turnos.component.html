@@ -7,6 +7,6 @@
     <tr *ngFor="let turno of items | async">
         <td>{{turno.usuario.nombre}}</td>
         <td>{{turno.numeroTurno}}</td>
-        <td>{{turno.fechaTurno | date:'shortTime'}}</td>
+        <td>{{calculateDate(turno.fechaTurno)}} min</td>
     </tr>
 </table>
