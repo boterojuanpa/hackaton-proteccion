@@ -41,7 +41,7 @@ export class CustomModalContext extends BSModalContext {
         <div class="modal-general-text">¡Ya no necesitas esperar por tu constancia, puedes obtenerlo en linea!<br><span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias?</span></div>
         </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-link btn-link-primary" data-dismiss="modal" (click) = "close()">Descargar constancia</button>
+        <a  class="btn btn-link btn-link-primary" href="https://www.proteccion.com/wps/portal/proteccion/web/home/home-afiliados-pensionados/home-pensionados/para-ahorro-pensiones-voluntarias/portafolio/multinversion/certificados" target="_blank">Descargar constancia</a>
       </div>
     </div>`
 
