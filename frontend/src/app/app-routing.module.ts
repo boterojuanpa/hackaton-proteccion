@@ -1,3 +1,4 @@
+import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
 import { TramitesComponent } from './tramites/tramites.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { NgModule } from '@angular/core';
@@ -15,7 +16,12 @@ const routes: Routes = [
   },{
     path: 'turnos', 
     component: TurnosComponent
+  },
+  {
+    path: 'turnos/:numeroTurno', 
+    component: ConsultaQrComponent
   }
+
 
 ]
 

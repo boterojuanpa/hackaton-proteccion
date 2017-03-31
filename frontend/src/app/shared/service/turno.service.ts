@@ -7,7 +7,7 @@ export class TurnoService {
 
   af: AngularFire;
 
-  public numeroTurno : number;
+  public numeroTurno: number;
 
   constructor(af: AngularFire) {
     this.af = af;
@@ -26,12 +26,23 @@ export class TurnoService {
     });
   }
 
+  public findByTurno(turno: string): any {
+    return this.af.database.list('/turnos', {
+      query: {
+        orderByChild: 'numeroTurno',
+        equalTo: turno,
+        limitToFirst: 1
+      }
+    });
+
+  }
+
   public getTurno(): string {
-    let letras = [ 'C', 'E', 'S', 'G', 'J', 'L', 'A', 'R' ];
-    
+    let letras = ['C', 'E', 'S', 'G', 'J', 'L', 'A', 'R'];
+
     return letras[Math.floor((Math.random() * letras.length) + 0)] + "-" + this.numeroTurno++;
 
-   }
+  }
 
 
 }
