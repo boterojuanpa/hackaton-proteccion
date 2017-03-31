@@ -7,8 +7,11 @@ export class TurnoService {
 
   af: AngularFire;
 
+  public numeroTurno : number;
+
   constructor(af: AngularFire) {
     this.af = af;
+    this.numeroTurno = 0;
   }
 
   insert(turno: any): void {
@@ -22,6 +25,13 @@ export class TurnoService {
       }
     });
   }
+
+  public getTurno(): string {
+    let letras = [ 'C', 'E', 'S', 'G', 'J', 'L', 'A', 'R' ];
+    
+    return letras[Math.floor((Math.random() * letras.length) + 0)] + "-" + this.numeroTurno++;
+
+   }
 
 
 }

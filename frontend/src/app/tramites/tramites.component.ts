@@ -15,12 +15,11 @@ export class TramitesComponent implements OnInit {
 
   public tiposTramite = [
     { id: 1, name: "Retiro de cesantias" },
-    { id: 2, name: "Certificado de difusión" }
+    { id: 2, name: "Consulta de afiliación obligatorias" }
   ];
 
   public sedes = [
-    { id: 1, name: "Bello" },
-    { id: 2, name: "Itaguí" }
+    { id: 1, name: "Suramericana" }
   ];
 
 
@@ -71,7 +70,13 @@ export class TramitesComponent implements OnInit {
 
 
   public agendar(): void {
+    console.log(this.tramiteSeleccionado);
+    
+    this.tramiteSeleccionado.fechaTurno = this.tramiteSeleccionado.fecha.getTime();
+    this.tramiteSeleccionado.numeroTurno = this.turnoService.getTurno();
+    
     this.turnoService.insert(this.tramiteSeleccionado);
+
     this.abrirModalResultadoExitoso();
     this.iniciarDatos();
   }

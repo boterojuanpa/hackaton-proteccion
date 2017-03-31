@@ -21,13 +21,13 @@
           <input type="number" [(ngModel)]="tramiteSeleccionado.celular" id="inputCelular" class="form-control" name="celular">
 
           <label for="inputCelular">Por favor ingrese la fecha</label> <br>
-          <p-calendar [(ngModel)]="tramiteSeleccionado.fecha" [showTime]="true" [minDate]="minDate" [readonlyInput]="true" name="fecha" required></p-calendar>
+          <p-calendar [(ngModel)]="tramiteSeleccionado.fecha" [showTime]="true" [minDate]="minDate" [readonlyInput]="true" name="fecha" required ></p-calendar>
 
 
         </div>
         <br>
         <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click)="agendar()" [disabled]="!form.form.valid">Agendar</button>
-        <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModal()">Descargar online</button>
+        <button class="btn btn-primary" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModalTramiteOnline()">Descargar online</button>
 
 
       </form>
