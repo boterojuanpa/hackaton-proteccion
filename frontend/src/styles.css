@@ -165,22 +165,26 @@ select.form-control, input.form-control {
 }
 .numero-turno{   
     font-size: 30px;
-    color: #e3d829;
+    color: #737373;
+    font-weight: bold;
 }
 .turno{
     color: #10498F;
     font-size: 50px;
+    font-weight: bold;
 }
 .tiempo-turno-container{
 text-align: center;
 }
 .tiempo-turno{    
     font-size: 30px;
-    color: #e3d829;
+    color: #737373;
+    font-weight: bold;
 }
 .hora{
     color: #10498F;
     font-size: 50px;
+    font-weight: bold;
 }
 
 .cubiculo-container{
@@ -200,6 +204,45 @@ text-align: center;
 .numero-cubiculo{
     font-size: 50px;
     color: #e3d829;
+}
+
+/*MODAL CONFIRMAR*/
+.modal-content-customized{
+    border-radius: 0px!important;
+    border: 0px transparent !important;
+}
+.modal-header-customized{
+    background-color: #e3d829;
+}
+.modal-title-customized{
+    color: #fff;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+.modal-body-customized{
+    text-align: center;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+.modal-general-text{
+    color: #1d9ee1;
+    font-size: 20px;
+    font-weight: bold;
+}
+.modal-general-text2{
+    font-size: 18px;
+    color: #737373;
+}
+.modal-footer-customized{
+     border: 0px !important;
+}
+.btn-link-primary{
+    font-size: 19px !important;
+    color: #1d9ee1 !important;
+}
+.btn-link-primary:hover, .btn-link-primary:focus{
+   color: #10498F !important;
+    outline: 0px !important;
 }
 .class1{
     color: #008AD1;

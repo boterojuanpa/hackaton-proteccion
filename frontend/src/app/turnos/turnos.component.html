@@ -4,7 +4,7 @@
         <td>Turno</td>
         <td>Tiempo</td>
     </tr>
-    <tr *ngFor="let turno of items | async">
+    <tr *ngFor="let turno of items | async  " [hidden]='filter(turno)'>
         <td>{{turno.usuario.nombre}}</td>
         <td>{{turno.numeroTurno}}</td>
         <td>{{calculateDate(turno.fechaTurno)}} min</td>

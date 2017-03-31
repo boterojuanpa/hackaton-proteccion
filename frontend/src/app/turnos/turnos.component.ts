@@ -1,3 +1,4 @@
+import { Tramite } from './../shared/model/tramite.model';
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { TurnoService } from "app/shared/service/turno.service";
@@ -28,8 +29,12 @@ export class TurnosComponent implements OnInit {
     var currentTime = new Date().getTime();
     console.log(currentTime);
     //console.log(date - currentTime);
-    var h = (date - currentTime)/1000;
-    return parseInt((h/60).toString());
+    var h = (date - currentTime) / 1000;
+    return parseInt((h / 60).toString());
+  }
+
+  public filter(tramite: Tramite): Boolean {
+    return tramite.fechaTurno < new Date().getTime();
   }
 
 }

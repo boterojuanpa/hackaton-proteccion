@@ -70,7 +70,7 @@
             <div class="col-md-12 col-xs-12">
                 <div class="buttons-container buttons-nr-position">
                     <button name="cancelar" type="button" class="btn-call-action" *ngIf="tramiteSeleccionado.tipoTramite.id == 1" (click)="agendar()"
-                        [disabled]="!form.form.valid">Agendar</button>
+                        [disabled]="!form.form.valid">Agendar turno</button>
                     <button name="continuar" type="button" class="btn-call-action" *ngIf="tramiteSeleccionado.tipoTramite.id == 2" (click)="abrirModalTramiteOnline()">Descargar certificado</button>
                 </div>
             </div>
