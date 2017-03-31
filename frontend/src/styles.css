@@ -148,3 +148,20 @@ select.form-control, input.form-control {
     margin-top: 0px;
 }
 }
+
+/* You can add global styles to this file, and also import other style files */
+
+.container-turnos{
+}
+
+.nombre-usuario {
+    text-align: center;
+    font-size: 45px;
+    color: #00aecb;
+    font-weight: bold;
+}
+
+.numero-turno{
+    text-align: center;
+    font-size: 30px;
+}
