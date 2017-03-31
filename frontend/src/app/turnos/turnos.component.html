@@ -6,5 +6,7 @@
     </tr>
     <tr *ngFor="let turno of items | async">
         <td>{{turno.usuario.nombre}}</td>
+        <td>{{turno.numeroTurno}}</td>
+        <td>{{turno.fechaTurno | date:'shortTime'}}</td>
     </tr>
 </table>

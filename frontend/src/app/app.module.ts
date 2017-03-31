@@ -14,6 +14,8 @@ import { AppComponent } from './app.component';
 import { TramitesComponent } from './tramites/tramites.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { FirebaseConfig } from "firebaseconfig";
+import { OrderPipe } from "app/shared/pipe/order.pipe";
+
 import { ConsultaQComponent } from './consulta-q/consulta-q.component';
 import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
 
@@ -24,6 +26,7 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     TurnosComponent,
     ConsultaQComponent,
     ConsultaQrComponent
+    OrderPipe
   ],
   imports: [
     BrowserModule,
@@ -34,10 +37,10 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     BootstrapModalModule,
     ScheduleModule,
     CalendarModule,
-	AngularFireModule.initializeApp(FirebaseConfig)
-    
+    AngularFireModule.initializeApp(FirebaseConfig)
+
   ],
   providers: [UsuariosService, TurnoService],
-  bootstrap: [AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
