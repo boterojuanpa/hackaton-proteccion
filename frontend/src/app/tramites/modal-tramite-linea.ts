@@ -34,7 +34,7 @@ export class CustomModalContext extends BSModalContext {
 
   <div class="modal-content modal-content-customized">
       <div class="modal-header modal-header-customized">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" (click) = "close()" class="close" data-dismiss="modal">&times;</button>
         <span class="modal-title modal-title-customized">Constancia de afiliación obligatoria</span>
       </div>
       <div class="modal-body modal-body-customized">
