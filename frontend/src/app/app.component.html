@@ -8,7 +8,7 @@
             <div class="col-md-6 col-xs-6">
                 <img src="../assets/images/imglogo.png" alt="logo-protección" title="logo-protección" class="imglogo"/>
             </div>
-            <div class="col-md-6 col-xs-6 align-right">
+            <div class="col-md-6 col-xs-6 align-right" *ngIf="urlCurrent == '/tramites'">
               <div class="margenes-usuario"></div>                            
                 <span class="bienvenida">Bienvenido</span>
                 <span class="usuario">{{usuariosService.usuarioSession.nombre}}</span>                            

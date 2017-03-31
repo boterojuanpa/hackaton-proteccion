@@ -2,24 +2,33 @@
   <div class="row">
     <div class="nombre-usuario">{{turno.usuario.nombre}}</div>
   </div>
-
-  <div class="row">
-  <div class="col-md-6 col-xs-6">
-    <div class="container-turnos">
-    <div class="col-md-6 numero-turno">
-      <div>Turno</div>
+  <div class="container-turnos"> 
+    <div class="numero-turno-container">
+      <span class="numero-turno">Turno</span>
       <div class="clearfix"></div>
-      <div>{{turno.numeroTurno}}</div>      
+      <span class="turno">{{turno.numeroTurno}}</span>      
     </div>
-    <div class="col-md-6 numero-turno">
-      <div>Tiempo espera</div>
+    <div class="tiempo-turno-container">
+      <span class="tiempo-turno">Tiempo aproximado de espera</span>
       <div class="clearfix"></div>
-      <div>{{turno.tiempoEspera}}</div>     
-    </div>
-    </div>
+      <span class="hora">{{calculateDate(turno.fechaTurno)}} min</span>     
     </div>
   </div>
 
-
+<!--INFO CUBICULO -->
+  <div class="cubiculo-container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="media">
+          <div class="media-body contextual-cubiculo-text">
+           Pasa al cubiculo
+          </div>
+          <div class="media-right media-middle">
+            <span class="media-object numero-cubiculo">5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>

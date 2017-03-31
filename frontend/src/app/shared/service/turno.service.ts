@@ -1,3 +1,4 @@
+import { Tramite } from './../model/tramite.model';
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
@@ -43,6 +44,8 @@ export class TurnoService {
     return letras[Math.floor((Math.random() * letras.length) + 0)] + "-" + this.numeroTurno++;
 
   }
+
+
 
 
 }

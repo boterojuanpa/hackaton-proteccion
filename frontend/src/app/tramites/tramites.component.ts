@@ -1,9 +1,10 @@
+import { CustomModal } from './modal-conformacion';
 import { Tramite } from './../shared/model/tramite.model';
 import { UsuariosService } from './../shared/service/usuarios.service';
 import { TurnoService } from './../shared/service/turno.service';
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { Overlay } from 'angular2-modal';
-import { Modal } from 'angular2-modal/plugins/bootstrap';
+import { Component, OnInit, ViewContainerRef, ViewChild, TemplateRef } from '@angular/core';
+import { Overlay, overlayConfigFactory } from 'angular2-modal';
+import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class TramitesComponent implements OnInit {
 
   public tiposTramite = [
     { id: 1, name: "Retiro de cesantias" },
-    { id: 2, name: "Consulta de afiliación obligatorias" }
+    { id: 2, name: "Constancia de afiliación obligatorias" }
   ];
 
   public sedes = [
@@ -26,7 +27,6 @@ export class TramitesComponent implements OnInit {
   public tramiteSeleccionado: Tramite;
 
   public minDate : Date;
-
   
   constructor(vcRef: ViewContainerRef,
       public modal: Modal,
@@ -52,20 +52,27 @@ export class TramitesComponent implements OnInit {
     this.modal.alert()
       .size('lg')
       .showClose(true)
-      .title('Descargar certificado en línea')
+      .title('Certificado en línea')
       .body(`
-            Para descargar el certificado dar clic `)
+            <span class="class1" >Ya no necesitas esperar por tu certificado, puedes obtenerlo en linea</span>
+            <span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias? </span>
+            `)
       .open();
   }
 
-   public abrirModalResultadoExitoso(): void {
-    this.modal.alert()
-      .size('lg')
-      .showClose(true)
-      .title('Éxito')
-      .body(`
-            La solicitud ha sido agendada`)
-      .open();
+   public abrirModalResultadoExitoso(turno : string): void {
+
+     this.modal.open(CustomModal,  overlayConfigFactory({ "turno": turno }, BSModalContext));
+
+    // this.modal.alert()
+    //   .size('lg')
+    //   .showClose(true)
+    //   .title('Éxito')
+    //   .body(`
+    //         La solicitud ha sido agendada
+    //         {{tramiteSeleccionado.fecha.getTime()}}
+    //         <img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="" />`)
+    //   .open();
   }
 
 
@@ -77,7 +84,7 @@ export class TramitesComponent implements OnInit {
     
     this.turnoService.insert(this.tramiteSeleccionado);
 
-    this.abrirModalResultadoExitoso();
+    this.abrirModalResultadoExitoso(this.tramiteSeleccionado.numeroTurno);
     this.iniciarDatos();
   }
 
