@@ -35,16 +35,13 @@ export class CustomModalContext extends BSModalContext {
   <div class="modal-content modal-content-customized">
       <div class="modal-header modal-header-customized">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <span class="modal-title modal-title-customized">Turno agendado</span>
+        <span class="modal-title modal-title-customized">Constancia de afiliación obligatoria</span>
       </div>
       <div class="modal-body modal-body-customized">
-        <div class="modal-general-text">¡Haz separado tu turno!<br><span class="modal-general-text2">scanea el QR, que tambien llegara a tu correo y enterate en tiempo real del estado de tu turno</span></div>
-        <span class="clearfix"></span>
-        <br>
-            prueba
-      </div>
-      <div class="modal-footer modal-footer-customized">
-        <button type="button" class="btn btn-link btn-link-primary" data-dismiss="modal" (click) = "close()">Aceptar</button>
+        <div class="modal-general-text">¡Ya no necesitas esperar por tu constancia, puedes obtenerlo en linea!<br><span class="class2">¿Quieres descargar tu constancia de afiliaciones obligatorias?</span></div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link btn-link-primary" data-dismiss="modal" (click) = "close()">Descargar constancia</button>
       </div>
     </div>`
 
