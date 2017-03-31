@@ -32,21 +32,23 @@ export class CustomModalContext extends BSModalContext {
   // Remove when solved.
   /* tslint:disable */ template: `
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
+  <div class="modal-content modal-content-customized">
+      <div class="modal-header modal-header-customized">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <span class="modal-title modal-title-customized">Turno agendado</span>
       </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-        
+      <div class="modal-body modal-body-customized">
+        <div class="modal-general-text">¡Haz separado tu turno!<br><span class="modal-general-text2">scanea el QR, que tambien llegara a tu correo y enterate en tiempo real del estado de tu turno</span></div>
+        <span class="clearfix"></span>
+        <br>
         <qr-code [value]="'http://192.168.164.62:4200/#/turnos/' + context.turno" [size]="150"></qr-code>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click) = "close()">Close</button>
+      <div class="modal-footer modal-footer-customized">
+        <button type="button" class="btn btn-link btn-link-primary" data-dismiss="modal" (click) = "close()">Aceptar</button>
       </div>
     </div>`
+
+   
 })
 export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {
     context: CustomModalContext;
@@ -59,22 +61,8 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
         dialog.setCloseGuard(this);
     }
 
-    onKeyUp(value) {
-        this.wrongAnswer = value != 5;
-        this.dialog.close();
-    }
-
     close() : void { 
-
         this.dialog.close();
     }
 
-
-    // beforeDismiss(): boolean {
-    //     return true;
-    // }
-
-    // beforeClose(): boolean {
-    //     return this.wrongAnswer;
-    // }
 }

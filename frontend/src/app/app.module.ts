@@ -39,7 +39,7 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     ScheduleModule,
     CalendarModule,
     AngularFireModule.initializeApp(FirebaseConfig),
-    QRCodeModule
+    QRCodeModule 
     
 
   ],
