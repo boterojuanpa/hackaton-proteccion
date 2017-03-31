@@ -16,7 +16,11 @@ export class TurnoService {
   }
 
   findAll(): any {
-    return this.af.database.list('/turnos');
+    return this.af.database.list('/turnos', {
+      query: {
+        orderByChild: 'fechaTurno',
+      }
+    });
   }
 
 
