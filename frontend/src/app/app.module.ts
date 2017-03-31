@@ -1,6 +1,5 @@
 import { ModalTramiteLinea } from './tramites/modal-tramite-linea';
 import { CustomModal } from './tramites/modal-conformacion';
-import { OrderPipe } from './shared/pipe/order.pipe';
 import { TurnoService } from 'app/shared/service/turno.service';
 import { UsuariosService } from './shared/service/usuarios.service';
 import { ScheduleModule, CalendarModule } from 'primeng/primeng';
