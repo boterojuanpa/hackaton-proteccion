@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { TurnoService } from "app/shared/service/turno.service";
 import { Observable } from "rxjs/Observable";
 
@@ -13,6 +13,7 @@ import { Observable } from "rxjs/Observable";
 export class AsesorComponent implements OnInit {
 
   items: FirebaseListObservable<any[]>;
+  itemFire: FirebaseObjectObservable<any>;
   turnoService: TurnoService;
   item: any;
 
@@ -25,7 +26,9 @@ export class AsesorComponent implements OnInit {
 
   siguienteTurno(): void {
     this.items = this.turnoService.next();
+    var first;
     this.items.forEach(item => {
+      console.log(item);
       if (item[3]) {
         this.turnoService.create(item[3]["subscription"], item[3]["usuario"]["nombre"]).subscribe(response => {
 
@@ -33,6 +36,14 @@ export class AsesorComponent implements OnInit {
         this.notifyTel(item[3]);
       }
     });
+   // this.deleteFirst(item);
+  }
+
+  deleteFirst(item): void {
+    if (item[0]) {
+      this.itemFire = item[0];
+      this.turnoService.delete(this.itemFire);
+    }
   }
 
   notifyTel(item): void {

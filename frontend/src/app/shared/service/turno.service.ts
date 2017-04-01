@@ -21,6 +21,10 @@ export class TurnoService {
     this.af.database.list('/turnos').push(turno);
   }
 
+  delete(turno: any): void {
+    this.af.database.object('/turnos/' + turno.$key).remove();
+  }
+
   findAll(): any {
     return this.af.database.list('/turnos', {
       query: {
@@ -64,7 +68,6 @@ export class TurnoService {
       nombre: nombre
     }
     let body = params;
-    console.log(body);
     return this.http.post('http://192.168.164.182:3000/send', body, headers).map((res: Response) => res);
   }
 
