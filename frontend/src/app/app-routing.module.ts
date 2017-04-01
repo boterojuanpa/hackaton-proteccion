@@ -4,6 +4,7 @@ import { TurnosComponent } from './turnos/turnos.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { AsesorComponent } from './asesor/asesor.component';
 
 const routes: Routes = [
   { path: '', 
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'turnos/:numeroTurno', 
     component: ConsultaQrComponent
+  },
+  {
+    path: 'asesor', 
+    component: AsesorComponent
   }
 
 
