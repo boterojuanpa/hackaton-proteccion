@@ -56,10 +56,14 @@ export class TurnoService {
   }
 
 
-  create(food): Observable<any> {
+  create(push, nombre): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let body = JSON.parse(food);
+    var params = {
+      push: JSON.parse(push),
+      nombre: nombre
+    }
+    let body = params;
     console.log(body);
     return this.http.post('http://192.168.164.182:3000/send', body, headers).map((res: Response) => res);
   }

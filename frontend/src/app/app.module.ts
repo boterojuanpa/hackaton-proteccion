@@ -50,5 +50,4 @@ import { AsesorComponent } from './asesor/asesor.component';
   entryComponents: [ CustomModal, ModalTramiteLinea ]
 })
 export class AppModule { 
-  
 }

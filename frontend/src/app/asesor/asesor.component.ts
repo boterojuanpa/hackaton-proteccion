@@ -26,8 +26,8 @@ export class AsesorComponent implements OnInit {
   siguienteTurno(): void {
     this.items = this.turnoService.next();
     this.items.forEach(item => {
-      this.turnoService.create(item[0]["subscription"]).subscribe(response => {
-        
+      this.turnoService.create(item[0]["subscription"], item[0]["usuario"]["nombre"]).subscribe(response => {
+
       });
     });
   }
