@@ -49,6 +49,5 @@ import { AsesorComponent } from './asesor/asesor.component';
   bootstrap: [AppComponent],
   entryComponents: [ CustomModal, ModalTramiteLinea ]
 })
-export class AppModule { 
-  
+export class AppModule {  
 }
