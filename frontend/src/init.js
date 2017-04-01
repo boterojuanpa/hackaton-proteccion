@@ -10,12 +10,29 @@ function init() {
         navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
             console.log('Service Worker registered');
             swRegistration = registration;
-            //unsubscribeUser();
-            subscribeUser();
+            validate();
         }).catch(function (err) {
             console.log('Service Worker registration failed: ', err);
         });
     }
+}
+
+function validate() {
+    swRegistration.pushManager.getSubscription()
+        .then(function (subscription) {
+            if (!subscription) {
+                var r = confirm("Habilitar notificaciones");
+                if (r == true) {
+                    subscribeUser();
+                }
+            }
+        })
+        .catch(function (error) {
+            console.log('Error validate', error);
+        })
+        .then(function () {
+            console.log('Validado');
+        });
 }
 
 
