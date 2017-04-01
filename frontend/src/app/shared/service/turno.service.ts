@@ -33,7 +33,7 @@ export class TurnoService {
     return this.af.database.list('/turnos', {
       query: {
         orderByChild: 'fechaTurno',
-        limitToFirst: 5
+        limitToFirst: 4
       }
     });
   }
@@ -66,6 +66,12 @@ export class TurnoService {
     let body = params;
     console.log(body);
     return this.http.post('http://192.168.164.182:3000/send', body, headers).map((res: Response) => res);
+  }
+
+  notifyTel(tel): Observable<any> {
+    return this.http.get('http://192.168.164.191:8080/finalizarAtencion?nroCelular=' + tel)
+      .map(this.extractData)
+      .catch(this.handleError);
   }
   private extractData(res: Response) {
     let body = res.json();

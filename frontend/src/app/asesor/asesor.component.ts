@@ -26,10 +26,21 @@ export class AsesorComponent implements OnInit {
   siguienteTurno(): void {
     this.items = this.turnoService.next();
     this.items.forEach(item => {
-      this.turnoService.create(item[0]["subscription"], item[0]["usuario"]["nombre"]).subscribe(response => {
+      if (item[3]) {
+        this.turnoService.create(item[3]["subscription"], item[3]["usuario"]["nombre"]).subscribe(response => {
 
-      });
+        });
+        this.notifyTel(item[3]);
+      }
     });
+  }
+
+  notifyTel(item): void {
+    if (item["celular"]) {
+      this.turnoService.notifyTel(item["celular"]).subscribe(response => {
+        console.log(response);
+      });
+    }
   }
 
 }
