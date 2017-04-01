@@ -42,7 +42,7 @@ import { AsesorComponent } from './asesor/asesor.component';
     CalendarModule,
     AngularFireModule.initializeApp(FirebaseConfig),
     QRCodeModule 
-    
+  
 
   ],
   providers: [UsuariosService, TurnoService],

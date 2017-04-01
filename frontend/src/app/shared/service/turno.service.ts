@@ -68,11 +68,11 @@ export class TurnoService {
       nombre: nombre
     }
     let body = params;
-    return this.http.post('http://192.168.164.182:3000/send', body, headers).map((res: Response) => res);
+    return this.http.post('http://localhost:3000/send', body, headers).map((res: Response) => res);
   }
 
   notifyTel(tel): Observable<any> {
-    return this.http.get('http://192.168.164.191:8080/finalizarAtencion?nroCelular=' + tel)
+    return this.http.get('http://localhost:8080/finalizarAtencion?nroCelular=' + tel)
       .map(this.extractData)
       .catch(this.handleError);
   }

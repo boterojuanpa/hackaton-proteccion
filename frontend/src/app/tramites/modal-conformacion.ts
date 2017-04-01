@@ -45,7 +45,7 @@ export class CustomModalContext extends BSModalContext {
         <div class="modal-general-text">¡Haz separado tu turno!<br><span class="modal-general-text2">scanea el QR, que tambien llegara a tu correo y enterate en tiempo real del estado de tu turno</span></div>
         <span class="clearfix"></span>
         <br> 
-        <qr-code [value]="'http://192.168.164.199:4200/#/turnos/' + context.turno" [size]="150"></qr-code>
+        <qr-code [value]="'http://192.168.164.182:4200/#/turnos/' + context.turno" [size]="150"></qr-code>
       </div>
       <div class="modal-footer modal-footer-customized">
         <button type="button" class="btn btn-link btn-link-primary" data-dismiss="modal" (click) = "close()">Aceptar</button>
@@ -87,7 +87,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
             let bodyString = { "email": this.context.email, "urlTurno" : "http://192.168.164.199:4200/#/turnos/" + this.context.turno };
 
-            this.http.post("http://192.168.164.199:8080/sendmail", bodyString).subscribe(data => {
+            this.http.post("http://localhost:8080/sendmail", bodyString).subscribe(data => {
                 console.log('ok');
             }, error => {
                 console.log(error.json());
