@@ -1,12 +1,12 @@
 <table class="table">
-    <tr>
+    <tr class="table-header">
         <td>Nombre</td>
         <td>Turno</td>
         <td>Tiempo</td>
     </tr>
-    <tr *ngFor="let turno of items | async  " [hidden]='filter(turno)'>
-        <td>{{turno.usuario.nombre}}</td>
-        <td>{{turno.numeroTurno}}</td>
-        <td>{{calculateDate(turno.fechaTurno)}} min</td>
+    <tr *ngFor="let turno of items | async" [hidden]='filter(turno)'>
+        <td class="tv-nombre">{{turno.usuario.nombre}}</td>
+        <td class="tv-turno">{{turno.numeroTurno}}</td>
+        <td class="tv-hora">{{calculateDate(turno.fechaTurno)}} min</td>
     </tr>
 </table>
