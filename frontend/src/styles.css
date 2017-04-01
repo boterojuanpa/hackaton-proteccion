@@ -241,7 +241,7 @@ text-align: center;
     color: #1d9ee1 !important;
 }
 .btn-link-primary:hover, .btn-link-primary:focus{
-   color: #10498F !important;
+    color: #10498F !important;
     outline: 0px !important;
 }
 .class1{
@@ -252,4 +252,38 @@ text-align: center;
 .class2{
     font-size: 20px;
     color: #737373;
+}
+/*TABLE*/
+td {
+    border-right: solid 1px #ddd;
+}
+.table{
+    border: 1px solid #ddd;
+}
+.table-header{
+    background-color: #737373;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+.tv-nombre{
+    color: #1d9ee1;
+    font-size: 50px;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+.tv-turno{
+    color: #10498F;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+.tv-hora{
+    color: #10498F;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
 }
