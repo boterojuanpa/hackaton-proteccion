@@ -23,7 +23,7 @@ public class TurnosController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String finalizarServicio(@RequestParam("nroCelular") String celular) {
-        ElibomRestClient elibom = new ElibomRestClient("yuber.garcia@ceiba.com.co", "YUBERg900917");
+        ElibomRestClient elibom = new ElibomRestClient("anarco0917@gmail.com", "0917Android");
         return elibom.sendMessage(celular, "Esto es una prueba");
 	}
 } 
