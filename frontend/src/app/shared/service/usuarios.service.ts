@@ -10,7 +10,7 @@ export class UsuariosService {
 
   constructor() {
     this.usuarios.push(new Usuario("Mateo Botero" , 1013124123));
-    this.usuarios.push(new Usuario("Yuber Garcia" , 62432341));
+    this.usuarios.push(new Usuario("Heriberto Jaramillo" , 62432341));
 
     this.usuarioSession = this.usuarios[Math.floor((Math.random() * this.usuarios.length) + 0)];
    }
