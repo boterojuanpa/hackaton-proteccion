@@ -56,7 +56,9 @@ export class TurnoService {
   public getTurno(): string {
     let letras = ['C', 'E', 'S', 'G', 'J', 'L', 'A', 'R'];
 
-    return letras[Math.floor((Math.random() * letras.length) + 0)] + "-" + this.numeroTurno++;
+    return letras[Math.floor((Math.random() * letras.length) + 0)] +
+       letras[Math.floor((Math.random() * letras.length) + 0)] + 
+       "-" + this.numeroTurno++;
   }
 
 
@@ -72,7 +74,7 @@ export class TurnoService {
   }
 
   notifyTel(tel): Observable<any> {
-    return this.http.get('http://192.168.164.191:8080/finalizarAtencion?nroCelular=' + tel)
+    return this.http.get('http://localhost:8080/finalizarAtencion?nroCelular=' + tel)
       .map(this.extractData)
       .catch(this.handleError);
   }

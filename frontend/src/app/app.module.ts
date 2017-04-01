@@ -28,7 +28,7 @@ import { AsesorComponent } from './asesor/asesor.component';
     TramitesComponent,
     TurnosComponent,
     ConsultaQrComponent,
-    CustomModal,  
+    CustomModal, 
     ModalTramiteLinea, AsesorComponent
   ],
   imports: [

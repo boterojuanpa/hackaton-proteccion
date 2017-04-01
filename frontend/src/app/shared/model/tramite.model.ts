@@ -14,6 +14,8 @@ export class Tramite {
     public email : string;
 
     constructor() {
+        this.email = "juan.botero@ceiba.com.co";
+        this.celular = 3016861422;
         
      }
 }
