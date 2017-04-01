@@ -20,6 +20,7 @@ import { FirebaseConfig } from "firebaseconfig";
 import { QRCodeModule } from 'angular2-qrcode';
 
 import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
+import { AsesorComponent } from './asesor/asesor.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
     TurnosComponent,
     ConsultaQrComponent,
     CustomModal,  
-    ModalTramiteLinea
+    ModalTramiteLinea, AsesorComponent
   ],
   imports: [
     BrowserModule,
@@ -48,4 +49,6 @@ import { ConsultaQrComponent } from './consulta-qr/consulta-qr.component';
   bootstrap: [AppComponent],
   entryComponents: [ CustomModal, ModalTramiteLinea ]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

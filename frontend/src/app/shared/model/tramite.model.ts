@@ -10,6 +10,7 @@ export class Tramite {
     public usuario: Usuario;
     public fechaTurno : number;
     public numeroTurno : string;
+    public subscription : string;
 
     constructor() {
         

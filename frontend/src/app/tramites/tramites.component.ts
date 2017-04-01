@@ -74,7 +74,7 @@ export class TramitesComponent implements OnInit {
     
     this.tramiteSeleccionado.fechaTurno = this.tramiteSeleccionado.fecha.getTime();
     this.tramiteSeleccionado.numeroTurno = this.turnoService.getTurno();
-    
+    this.tramiteSeleccionado.subscription = localStorage.getItem("subscription");
     this.turnoService.insert(this.tramiteSeleccionado);
 
     this.abrirModalResultadoExitoso(this.tramiteSeleccionado.numeroTurno);

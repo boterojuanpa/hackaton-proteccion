@@ -28,7 +28,8 @@ function subscribeUser() {
     })
         .then(function (subscription) {
             console.log('User is subscribed:', subscription);
-            console.log(JSON.stringify(subscription));
+            alert(JSON.stringify(subscription));
+            localStorage.setItem("subscription", JSON.stringify(subscription));
         })
         .catch(function (err) {
             console.log('Failed to subscribe the user: ', err);
