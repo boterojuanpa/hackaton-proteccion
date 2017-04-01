@@ -11,6 +11,7 @@ export class Tramite {
     public fechaTurno : number;
     public numeroTurno : string;
     public subscription : string;
+    public email : string;
 
     constructor() {
         

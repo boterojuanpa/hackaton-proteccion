@@ -2,20 +2,31 @@ package com.prueba;
 
 public class Turno {
 
-	private final String turno;
-	private final long tiempoAproximado;
-
-	public Turno(String turno, long tiempoAproximado) {
-		this.turno = turno;
-		this.tiempoAproximado = tiempoAproximado;
+	private  String email;
+	
+	private String urlTurno;
+	
+	public Turno() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public String getTurno() {
-		return turno;
+	public Turno(String email, String urlTurno) {
+		this.email = email;
+		this.urlTurno = urlTurno;
 	}
 
-	public long getTiempoAproximado() {
-		return tiempoAproximado;
+	public String getEmail() {
+		return email;
 	}
+	
+	public void setUrlTurno(String urlTurno) {
+		this.urlTurno = urlTurno;
+	}
+	
+	public String getUrlTurno() {
+		return urlTurno;
+	}
+
+
 
 }

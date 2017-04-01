@@ -53,19 +53,11 @@ export class TramitesComponent implements OnInit {
     this.modal.open(ModalTramiteLinea,  overlayConfigFactory({ "turno": "turno" }, BSModalContext));
   }
 
-   public abrirModalResultadoExitoso(turno : string): void {
+   public abrirModalResultadoExitoso(tramiteSeleccionado : Tramite): void {
 
-     this.modal.open(CustomModal,  overlayConfigFactory({ "turno": turno }, BSModalContext));
+     this.modal.open(CustomModal,  overlayConfigFactory({ "turno": tramiteSeleccionado.numeroTurno,
+                                                          "email" : tramiteSeleccionado.email }, BSModalContext));
 
-    // this.modal.alert()
-    //   .size('lg')
-    //   .showClose(true)
-    //   .title('Éxito')
-    //   .body(`
-    //         La solicitud ha sido agendada
-    //         {{tramiteSeleccionado.fecha.getTime()}}
-    //         <img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="" />`)
-    //   .open();
   }
 
 
@@ -77,13 +69,14 @@ export class TramitesComponent implements OnInit {
     this.tramiteSeleccionado.subscription = localStorage.getItem("subscription");
     this.turnoService.insert(this.tramiteSeleccionado);
 
-    this.abrirModalResultadoExitoso(this.tramiteSeleccionado.numeroTurno);
+    this.abrirModalResultadoExitoso(this.tramiteSeleccionado);
     this.iniciarDatos();
   }
 
   private iniciarDatos(): void {
     this.tramiteSeleccionado = new Tramite();
     this.tramiteSeleccionado.tipoTramite = this.tiposTramite[0];
+    this.tramiteSeleccionado.sede = this.sedes[0];
     this.tramiteSeleccionado.usuario = this.usuariosService.usuarioSession;
     this.seleccionarTipoTramite();
   }
