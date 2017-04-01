@@ -56,7 +56,9 @@ export class TurnoService {
   public getTurno(): string {
     let letras = ['C', 'E', 'S', 'G', 'J', 'L', 'A', 'R'];
 
-    return letras[Math.floor((Math.random() * letras.length) + 0)] + "-" + this.numeroTurno++;
+    return letras[Math.floor((Math.random() * letras.length) + 0)] +
+       letras[Math.floor((Math.random() * letras.length) + 0)] + 
+       "-" + this.numeroTurno++;
   }
 
 
