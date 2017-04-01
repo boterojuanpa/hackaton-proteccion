@@ -1,6 +1,6 @@
 self.addEventListener('push', function (event) {
     console.log("Notificacion recibida");
-    console.log(`Datos: "${event.data.message}"`);
+    console.log(`Datos: "${JSON.parse(event.data.text()).message}"`);
 
     const title = JSON.parse(event.data).message;
     const options = {
